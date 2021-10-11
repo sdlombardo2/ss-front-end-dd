@@ -10,6 +10,8 @@ COPY package.json /usr/src/app/
 COPY yarn.lock /usr/src/app/
 RUN chown myuser /usr/src/app/yarn.lock
 
+RUN npm install --save honeycomb-beeline
+
 USER myuser
 RUN yarn install
 

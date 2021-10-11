@@ -1,3 +1,11 @@
+require("honeycomb-beeline")({
+  // Get this via https://ui.honeycomb.io/account after signing up for Honeycomb
+  writeKey: "f9e0f7c58be2dde4c878162daed00123",
+  // The name of your app is a good choice to start with
+  dataset: "Sock_Shop-frontend",
+  serviceName: "front-end"
+});
+
 var request      = require("request")
   , express      = require("express")
   , morgan       = require("morgan")

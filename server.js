@@ -23,6 +23,11 @@ var request      = require("request")
   , metrics      = require("./api/metrics")
   , app          = express()
 
+const beeline = require("honeycomb-beeline")();
+
+const handleInput = () => {
+  beeline.addTraceContext({ userId: userId });
+};
 
 app.use(helpers.rewriteSlash);
 app.use(metrics);

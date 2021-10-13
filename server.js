@@ -26,7 +26,7 @@ var request      = require("request")
 const beeline = require("honeycomb-beeline")();
 
 const handleInput = () => {
-  beeline.addTraceContext({ userId: userId });
+  beeline.addTraceContext({ customerId: customerId });
 };
 
 app.use(helpers.rewriteSlash);

@@ -3,7 +3,6 @@ require("honeycomb-beeline")({
   writeKey: "f9e0f7c58be2dde4c878162daed00123",
   // The name of your app is a good choice to start with
   dataset: "Sock_Shop-frontend",
-  httpTraceParserHook: beeline.honeycomb.httpTraceParserHook,
   serviceName: "front-end"
 });
 
@@ -25,6 +24,12 @@ var request      = require("request")
   , app          = express()
 
 const beeline = require("honeycomb-beeline")();
+
+beeline({
+    writeKey: "f9e0f7c58be2dde4c878162daed00123",
+    dataset: "Sock_Shop-frontend",
+    httpTraceParserHook: beeline.honeycomb.httpTraceParserHook,
+});
 
 const handleInput = () => {
   beeline.addTraceContext({ customerId: customerId });

@@ -1,10 +1,18 @@
-require("honeycomb-beeline")({
-  // Get this via https://ui.honeycomb.io/account after signing up for Honeycomb
-  writeKey: "f9e0f7c58be2dde4c878162daed00123",
-  // The name of your app is a good choice to start with
-  dataset: "Sock_Shop-frontend",
-  serviceName: "front-end"
+import { datadogRum } from '@datadog/browser-rum';
+    
+datadogRum.init({
+    applicationId: '18864afd-1af7-4aee-b06c-023437a308cf',
+    clientToken: 'pub642dec2d4d989558480a36adb11b4601',
+    site: 'datadoghq.com',
+    service:'sock-shop',
+    // Specify a version number to identify the deployed version of your application in Datadog 
+    // version: '1.0.0',
+    sampleRate: 100,
+    trackInteractions: true,
+    defaultPrivacyLevel: 'mask-user-input'
 });
+    
+datadogRum.startSessionReplayRecording();
 
 var request      = require("request")
   , express      = require("express")
@@ -22,18 +30,6 @@ var request      = require("request")
   , user         = require("./api/user")
   , metrics      = require("./api/metrics")
   , app          = express()
-
-const beeline = require("honeycomb-beeline")();
-
-beeline({
-    writeKey: "f9e0f7c58be2dde4c878162daed00123",
-    dataset: "Sock_Shop-frontend",
-    httpTraceParserHook: beeline.honeycomb.httpTraceParserHook,
-});
-
-const handleInput = () => {
-  beeline.addTraceContext({ customerId: customerId });
-};
 
 app.use(helpers.rewriteSlash);
 app.use(metrics);

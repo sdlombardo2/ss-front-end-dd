@@ -21,13 +21,6 @@
         helpers.simpleHttpRequest(endpoints.cardsUrl, res, next);
     });
 
-    
-    const beeline = require("honeycomb-beeline")();
-
-    const handleInput = () => {
-      beeline.addTraceContext({ customerId: customerId });
-    };
-    
     // Create Customer - TO BE USED FOR TESTING ONLY (for now)
     app.post("/customers", function(req, res, next) {
         var options = {

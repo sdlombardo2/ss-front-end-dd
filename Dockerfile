@@ -11,6 +11,9 @@ COPY yarn.lock /usr/src/app/
 RUN chown myuser /usr/src/app/yarn.lock
 
 USER myuser
+RUN npm i @datadog/browser-rum
+RUN npm i @datadog/browser-rum-core
+RUN npm i @datadog/browser-core
 RUN yarn install
 
 COPY . /usr/src/app

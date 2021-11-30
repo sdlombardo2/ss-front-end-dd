@@ -1,7 +1,6 @@
 {
   "name": "microservices-demo-front-end",
   "version": "0.0.1",
-  "type": "module",
   "description": "Front end for microservices demo application.",
   "main": "server.js",
   "scripts": {

@@ -1,10 +1,9 @@
 //import { datadogRum } from '@datadog/browser-rum';
-//require("@datadog/browser-rum");
-import ddRum from '@datadog/browser-rum';
+require("@datadog/browser-rum");
 
 //const ddRum = require("@datadog/browser-rum");
 
-const datadogRum = ddRum;
+//const datadogRum = ddRum;
     
 datadogRum.init({
     applicationId: '18864afd-1af7-4aee-b06c-023437a308cf',

@@ -1,7 +1,7 @@
-//import { datadogRum } from '@datadog/browser-rum';
-require("@datadog/browser-rum");
+import { datadogRum } from '@datadog/browser-rum';
+//require("@datadog/browser-rum");
 
-const datadogRum = require("@datadog/browser-rum");
+//const datadogRum = require("@datadog/browser-rum");
     
 datadogRum.init({
     applicationId: '18864afd-1af7-4aee-b06c-023437a308cf',

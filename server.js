@@ -1,23 +1,4 @@
-import { datadogRum } from '@datadog/browser-rum';
-//require("@datadog/browser-rum");
-
-//const ddRum = require("@datadog/browser-rum");
-
-//const datadogRum = ddRum;
-    
-datadogRum.init({
-    applicationId: '18864afd-1af7-4aee-b06c-023437a308cf',
-    clientToken: 'pub642dec2d4d989558480a36adb11b4601',
-    site: 'datadoghq.com',
-    service:'sock-shop',
-    // Specify a version number to identify the deployed version of your application in Datadog 
-    // version: '1.0.0',
-    sampleRate: 100,
-    trackInteractions: true,
-    defaultPrivacyLevel: 'mask-user-input'
-});
-    
-datadogRum.startSessionReplayRecording();
+const tracer = require('dd-trace').init()
 
 var request      = require("request")
   , express      = require("express")

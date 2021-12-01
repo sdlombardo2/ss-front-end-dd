@@ -1,5 +1,5 @@
-//import { datadogRum } from '@datadog/browser-rum';
-require("@datadog/browser-rum");
+import { datadogRum } from '@datadog/browser-rum';
+//require("@datadog/browser-rum");
 
 //const ddRum = require("@datadog/browser-rum");
 
